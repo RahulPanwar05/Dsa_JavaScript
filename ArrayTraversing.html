@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Traversing</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        width: 50vw;
+        margin: auto;
+        border: 1px solid red;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      "
+    >
+      <h1>get array element</h1>
+      <input type="text" id="userInput" placeholder="enter value" />
+      <button onclick="getArrayElement()">Get Element</button>
+      <p id="result"></p>
+      <p id="all"></p>
+    </div>
+
+    <script>
+      const myArray = [
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 14, 50, 14, 45, 63,
+      ];
+      let content ="";
+      const all = document.getElementById("all");
+      for (let index = 0; index < myArray.length; index++) {
+        const element = myArray[index];
+        content += `array's ${index} is ${element} <br>`
+      }
+      all.innerHTML = content
+
+      const getArrayElement = () => {
+        let userInput = document.getElementById("userInput").value;
+        let result = document.getElementById("result");
+        console.log(userInput);
+        console.log(!isNaN(userInput), userInput < myArray.length);
+        if (!isNaN(userInput) && userInput < myArray.length && userInput >= 0) {
+          const element = myArray[userInput];
+          result.innerText = `element is ${element}`;
+        } else {
+          alert("enter valid value");
+        }
+      };
+    </script>
+  </body>
+</html>
