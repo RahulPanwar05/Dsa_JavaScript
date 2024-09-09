@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Merging</title>
+  </head>
+  <body>
+    <h1>Merging of two array</h1>
+    <script>
+      let array1 = [1, 2, 3, 4, 5, 6];
+      let array2 = [7, 8, 9, 10];
+      let array3 = [];
+
+      for (let index = 0; index < array1.length; index++) {
+        array3[index] = array1[index];
+      }
+      for (let index = 0; index < array2.length; index++) {
+        array3[array1.length + index] = array2[index];
+      }
+      console.log(array3);
+    </script>
+  </body>
+</html>
